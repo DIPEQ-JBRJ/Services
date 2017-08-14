@@ -1,0 +1,51 @@
+.body {
+	font-family: "Open Sans",sans-serif;
+	font-size: 18px;
+}
+
+.container {
+
+ 	padding-left: 0px;
+ 	padding-right: 0px;
+}
+
+.navbar {
+	min-height: 42px;
+}
+
+.navbar-inverse{
+	background-color: #fff;
+	border-bottom: 1px solid #eeeeee ;
+	height: 35px;
+	box-shadow: 0 3px 0 rgba(50, 50, 50, 0.31);
+}
+.navbar-inverse .navbar-brand {
+	color : green;
+}
+
+.navbar-brand-logo img{
+	padding: 2px;
+	height: 0px;
+	float: left;
+
+}
+
+img {
+	float: left;
+	margin-right: 30px;
+}
+
+h3 {
+	font-family: "Muli",sans-serif;
+	color: green;
+	font-size: 15px;
+	margin-top: 50px;
+}
+
+a {
+	color: green;
+}
+
+a:hover {
+	color: black;
+}

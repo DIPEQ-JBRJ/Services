@@ -1,0 +1,137 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Brazilian Flora 2020 WebService",
+        "description": "The Brazilian Flora 2020 project is part of the Reflora Programme and is being conducted with the support of the Sistema de Informação sobre a Biodiversidade Brasileira (SiBBr). At the moment has nearly 700 scientists working in a network to prepare the monographs. These researchers are also responsible for nomenclatural information and geographic distribution (coverage in Brazil, endemism and biomes), as well as valuable data regarding life forms, substrate and vegetation types for each species.",
+        "version": "1.0.0"
+    },
+    "host": "servicos.jbrj.gov.br",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/flora",
+    "produces": [
+        "application/json",
+        "application/xml"
+    ],
+    "paths": {
+        "/families": {
+            "get": {
+                "summary": "List all families",
+                "description": "",
+                "tags": [
+                    "CheckList"
+                ]
+            }
+        },
+        "/genus/{family}": {
+            "get": {
+                "summary": "List the genus from a given family",
+                "description": "",
+                "tags": [
+                    "CheckList"
+                ],
+                "parameters": [
+                    {
+                        "name": "family",
+                        "in": "path",
+                        "description": "Family name",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+
+            }
+        },
+        "/species/{family}": {
+            "get": {
+                "summary": "List specie profile from a given family",
+                "description": "",
+                "tags": [
+                    "CheckList"
+                ],
+                "parameters": [
+                    {
+                        "name": "family",
+                        "in": "path",
+                        "description": "Family name",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/taxon/{scientificname}": {
+            "get": {
+                "summary": "List taxon profile from a given scientific name",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "scientificname",
+                        "in": "path",
+                        "description": "Scientific Name",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "CheckList"
+                ]
+            }
+        },
+        "/endemism/{scientificname}": {
+            "get": {
+                "summary": "List taxon profile from a given scientific name",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "scientificname",
+                        "in": "path",
+                        "description": "Scientific Name",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "CheckList"
+                ]
+            }
+        },
+        "/url/{specie}": {
+            "get": {
+                "summary": "List URL from a given scientific name",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "specie",
+                        "in": "path",
+                        "description": "Scientific Name ",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "CheckList"
+                ]
+            }
+        },
+	   "/search/{scientificname}": {
+            "get": {
+                "summary": "List URL from a given scientific name",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "scientificname",
+                        "in": "path",
+                        "description": "Scientific Name",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "CheckList"
+                ]
+            }
+        }
+    }
+}
