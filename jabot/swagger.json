@@ -1,0 +1,195 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "JABOT WebService",
+        "description": "[JABOT](http://http://aplicacoes.jbrj.gov.br/jabot/v2/consulta.php) is a system for managing scientific collections for herbarium and laboratory networks of botanical research institutions.\n\n The following services provide the data generated and curated by JBRJ herbarium and collaborators.",
+        "version": "1.0.0",
+        "license":{
+        	"name": "CC-BY",
+            "url": "http://opendefinition.org/licenses/cc-by/"
+        }
+    },
+    "host": "servicos.jbrj.gov.br",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/jabot",
+    "paths": {
+        "/collections": {
+            "get": {
+                "summary": "List all collections names",
+                "description": "Return the names of all collections in Jabot.\n",
+		"produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "tags": [
+                    "Names"
+                ]	
+          }	    
+        },
+        "/families": {
+            "get": {
+                "summary": "List all family names",
+                "description": "Return the names of all families in Jabot.\n",
+                "tags": [
+                    "Names"
+                ]
+            }
+        },
+        "/occurrence/{family}": {
+            "get": {
+                "summary": "List all occurrence information for a given family",
+                "description": "Return the occurrences for a given family in Jabot.\n",
+                "parameters": [
+                    {
+                        "name": "family",
+                        "in": "path",
+                        "description": "Family name. ",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Occurrences"
+                ]
+            }
+        },
+        "/genus": {
+            "get": {
+                "summary": "List all genus names",
+                "description": "Return the names of all genus in Jabot.\n",
+                "tags": [
+                    "Names"
+                ]
+            }
+        },
+        "/genus/{family}": {
+            "get": {
+                "summary": "List all genus name for a given family",
+                "description": "Return the genus names for a given family in Jabot.",
+                "parameters": [
+                    {
+                        "name": "family",
+                        "in": "path",
+                        "description": "Family name. ",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Names"
+                ]
+            }
+        },
+        "/occurrence/{genus}/{family}": {
+            "get": {
+                "summary": "List all occurrence information for a given genus and family",
+                "description": "Return a ocurrence information for a given genus and family.",
+                "parameters": [
+                    {
+                        "name": "family",
+                        "in": "path",
+                        "description": "Family name.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "genus",
+                        "in": "path",
+                        "description": "Genus name. ",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Occurrences"
+                ]
+            }
+        },
+        "/species": {
+            "get": {
+                "summary": "List all species names",
+                "description": "Return names of all species in Jabot.",
+                "tags": [
+                    "Names"
+                ]
+            }
+        },
+        "/specie/{genus}/{family}": {
+            "get": {
+                "summary": "List all species names for a given genus and family",
+                "description": "Return a species name for a given family.",
+                "parameters": [
+                    {
+                        "name": "family",
+                        "in": "path",
+                        "description": "Family name. ",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "genus",
+                        "in": "path",
+                        "description": "Genus name. ",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Names"
+                ]
+            }
+        },
+        "/occurrence/{specie}/{genus}/{family}": {
+            "get": {
+                "summary": "List all occurrence information for a given genus, family and specie",
+                "description": "Return a ocurrence information for a given genus, family and specie.",
+                "parameters": [
+                    {
+                        "name": "family",
+                        "in": "path",
+                        "description": "Family name. ",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "genus",
+                        "in": "path",
+                        "description": "Genus name. ",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "specie",
+                        "in": "path",
+                        "description": "Specie name. ",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Occurrences"
+                ]
+            }
+        },
+	 "/occurrence/city/{city}": {
+            "get": {
+                "summary": "List all occurrence information for a given city",
+                "description": "Return a ocurrence information for a given city.",
+                "parameters": [
+                    {
+                        "name": "city",
+                        "in": "path",
+                        "description": "City",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Occurrences"
+                ]
+            }
+        }
+    }
+}
